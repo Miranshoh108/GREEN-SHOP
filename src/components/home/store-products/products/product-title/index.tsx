@@ -1,9 +1,9 @@
 import { Select } from "antd";
 import { title_category } from "../../../../../utils";
-import { useSearchParamsHandler } from "../../../../../generic/searchParams";
-
+// import { useSearchParamsHandler } from "../../../../../generic/searchParams";
+import {searchParam} from "../../../../../generic/searchParam"
 const ProductsTitle = () => {
-  const { setParam, getParam } = useSearchParamsHandler();
+  const { setParam, getParam } = searchParam();
   const typeParam: string = getParam("type") || "all-plants";
   const categoryPath: string = getParam("category") || "house-plants";
   const typePrice: string = getParam("sort") || "default-sorting";
