@@ -1,19 +1,29 @@
-import { FC } from "react";
-import { ComponentType } from "../../@types";
+import { ReactElement } from "react";
 import Modals from "../../components/modals";
 import { Provider } from "react-redux";
 import { store } from "../../redux/store";
+import { AuthProvider } from "react-auth-kit";
 import { QueryClient, QueryClientProvider } from "react-query";
-const queryClint = new QueryClient();
-const ProviderConfig: FC<ComponentType> = ({ children }) => {
+
+const queryClient = new QueryClient();
+
+const ProviderConfg = ({ children }: { children: ReactElement }) => {
   return (
-    <Provider store={store}>
-      <QueryClientProvider client={queryClint}>
-        <Modals />
-        {children}
+    <>
+      <QueryClientProvider client={queryClient}>
+        <AuthProvider
+          authType={"cookie"}
+          authName={"_auth"}
+          cookieDomain={window.location.hostname}
+          cookieSecure={window.location.protocol === "https:"}
+        >
+          <Provider store={store}>
+            <Modals /> {children}
+          </Provider>
+        </AuthProvider>
       </QueryClientProvider>
-    </Provider>
+    </>
   );
 };
 
-export default ProviderConfig;
+export default ProviderConfg;
