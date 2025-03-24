@@ -6,12 +6,13 @@ import facebook from "../../../../assets/icons/facebook.svg";
 import { LoadingOutlined } from "@ant-design/icons";
 import { useReduxDispatch, useReduxSelector } from "../../../../hooks/useRedux";
 import { notificationApi } from "../../../../generic/notification";
-import { useRegister, useRegisterWithGoogle } from "../../../../hooks/useQuery/useQueryActions";
+import {
+  useRegister,
+  useRegisterWithGoogle,
+} from "../../../../hooks/useQuery/useQueryActions";
 import { setAuthorizationModalVisibility } from "../../../../redux/modal-slice";
 
 const Register = () => {
-  
-
   const { mutate } = useRegister();
   const dispatch = useReduxDispatch();
   const { authorizationModalVisibility } = useReduxSelector(
@@ -28,8 +29,7 @@ const Register = () => {
     mutate({ data: { name, surname, email, password } });
   };
 
-  const {mutate:registerWithGoogle} = useRegisterWithGoogle()
-
+  const { mutate: registerWithGoogle } = useRegisterWithGoogle();
 
   return (
     <div className="w-[65%] m-auto mt-[5.3rem]">
@@ -100,13 +100,13 @@ const Register = () => {
             Forgot password ?
           </p>
           <button
-            disabled={authorizationModalVisibility.isLoadnig}
+            disabled={authorizationModalVisibility.isLoading}
             className={`mt-[2.7rem] flex items-center justify-center gap-[0.5rem] w-[100%] bg-[#46A358] h-[4.5rem] rounded-[0.5rem] text-[1.6rem] font-bold text-[#fff] ${
-              authorizationModalVisibility.isLoadnig && "opacity-70"
+              authorizationModalVisibility.isLoading && "opacity-70"
             }`}
             type="submit"
           >
-            {authorizationModalVisibility.isLoadnig ? (
+            {authorizationModalVisibility.isLoading ? (
               <LoadingOutlined />
             ) : (
               "Register"

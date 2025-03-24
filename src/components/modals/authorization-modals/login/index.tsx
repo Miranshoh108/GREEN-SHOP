@@ -21,7 +21,7 @@ const Login = () => {
   const { mutate: mutateGoogle } = loginWithGoogle();
 
   const onFinish = (e: FieldType) => {
-    dispatch(setAuthorizationModalVisibility({ open: true, isLoadnig: true }));
+    dispatch(setAuthorizationModalVisibility({ open: true, isLoading: true }));
     mutate({ data: e });
   };
 
@@ -66,13 +66,13 @@ const Login = () => {
             Forgot password ?
           </p>
           <button
-            disabled={authorizationModalVisibility.isLoadnig}
+            disabled={authorizationModalVisibility.isLoading}
             className={`mt-[2.7rem] flex items-center justify-center gap-[0.5rem] w-[100%] bg-[#46A358] h-[4.5rem] rounded-[0.5rem] text-[1.6rem] font-bold text-[#fff] ${
-              authorizationModalVisibility.isLoadnig && "opacity-70"
+              authorizationModalVisibility.isLoading && "opacity-70"
             }`}
             type="submit"
           >
-            {authorizationModalVisibility.isLoadnig ? (
+            {authorizationModalVisibility.isLoading ? (
               <LoadingOutlined />
             ) : (
               "Login"

@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
-import { DataTYpe } from "../../../@types";
+import { DataType } from "../../../@types";
 
-const ShopDescription: FC<DataTYpe> = ({ data }) => {
+const ShopDescription: FC<DataType> = ({ data }) => {
   const [state, setState] = useState<Boolean>(false);
   return (
     <div>

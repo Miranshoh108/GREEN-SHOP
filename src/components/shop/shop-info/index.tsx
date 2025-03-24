@@ -1,10 +1,10 @@
 import { type FC } from "react";
-import type { DataTYpe } from "../../../@types";
+import type { DataType } from "../../../@types";
 import { Rate, Skeleton } from "antd";
 import AvatarItem from "../avatar";
 import { HeartOutlined } from "@ant-design/icons";
 
-const ShopInfo: FC<DataTYpe> = ({ data, isLoading, isError }) => {
+const ShopInfo: FC<DataType> = ({ data, isLoading, isError }) => {
   const loader = isLoading || isError;
   const size_Style =
     "w-[28px] h-[28px] border border-[#EAEAEA] rounded-full hover:border-[#46A358] tarnsition-colors font-medium";

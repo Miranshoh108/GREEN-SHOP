@@ -1,11 +1,11 @@
-import BlogComponent from "../../components/blog";
+// import BlogComponent from "../../components/blog";
 
-function Blogs() {
-  return (
-    <div>
-      <BlogComponent />
-    </div>
-  );
-}
+// function Blogs() {
+//   return (
+//     <div>
+//       <BlogComponent />
+//     </div>
+//   );
+// }
 
-export default Blogs;
+// export default Blogs;
