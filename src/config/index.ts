@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 const firebaseConfig = {
-  apiKey: "AIzaSyDvZr2bQLmksvHvGA-o-eHSb9lBn86qBCc",
+  // apiKey: "AIzaSyDvZr2bQLmksvHvGA-o-eHSb9lBn86qBCc",
   authDomain: "n14-green-shop.firebaseapp.com",
   projectId: "n14-green-shop",
   storageBucket: "n14-green-shop.firebasestorage.app",

@@ -4,12 +4,12 @@ import MainLayout from "../components/main-layout";
 import Shop from "../pages/shop";
 import ShopProducts from "../pages/products-shop";
 import ProductCheckout from "../pages/product-checkout";
-// import Blogs from "../pages/blog";
 import Rendering from "../components/blog/rendering";
 import Profile from "../pages/profile";
 import PriveteRoute from "./privete-route";
 import { path_profile } from "../utils";
 import User from "../pages/user";
+import Blogs from "../pages/blog";
 
 export const root = createBrowserRouter([
   {
@@ -32,10 +32,10 @@ export const root = createBrowserRouter([
         path: "/product-checkout",
         element: <ProductCheckout />,
       },
-      // {
-      //   path: "/blog",
-      //   element: <Blogs />,
-      // },
+      {
+        path: "/blog",
+        element: <Blogs />,
+      },
       {
         path: "/blog/:id/:user_id",
         element: <Rendering />,
