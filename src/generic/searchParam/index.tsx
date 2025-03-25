@@ -1,16 +1,27 @@
 import { useSearchParams } from "react-router-dom";
 
-const searchParam = () => {
-  const [params , setParams] = useSearchParams();
+interface ParamObject {
+  [key: string]: string;
+}
 
-  const getParam = (path:string) => params.get(path)
-  const setParam = (param:object) => {
-    setParams({
-        ...param
-    })
+const searchParam = () => {
+  const [params, setParams] = useSearchParams();
+
+  const getParam = (key: string): string | null => {
+    return params.get(key);
   };
-  return {getParam , setParam}
+
+  const setParam = (param: ParamObject): void => {
+    const newParams = new URLSearchParams(params.toString());
+
+    Object.entries(param).forEach(([key, value]) => {
+      newParams.set(key, value);
+    });
+
+    setParams(newParams);
+  };
+
+  return { getParam, setParam };
 };
 
-
-export {searchParam}
+export { searchParam };
